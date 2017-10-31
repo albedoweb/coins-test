@@ -1,0 +1,3 @@
+CURRENCY = (
+    ('PHP', 'PHP'),
+)
