@@ -1,5 +1,9 @@
 # coins-test
 
+## Overview
+
+App provides simple restful API for payments. App created for demo purpose.
+
 ## Installation
 
 * `virtualenv ./env/`
@@ -10,3 +14,7 @@
 
 * `flake8 ./coins` to run PEP8 check
 * `python ./coins/manage.py test` to run tests
+
+## Documentation
+
+

@@ -30,23 +30,22 @@ For the test, we ask that you create a simple account/transactions model with a 
 Data:
 
 Account
- id bob123
- owner bob
- balance 100
- currency PHP
+  id bob123
+  owner bob
+  balance 100
+  currency PHP
 
 Account
+  id alice456
+  owner alice
+  balance 0.01
+  currency PHP
 
- id alice456
- owner alice
- balance 0.01
- currency PHP
 Payment:
   account "bob123"
   amount: 100
   to_account: "alice456"
   direction: "outgoing"
-
 
 Payment:
   account "alice456"
