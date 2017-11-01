@@ -18,7 +18,9 @@ class PaymentManager(models.Manager):
         from_account = Account.objects.select_for_update().get(
             pk=from_account
         )
-        to_account = Account.objects.get(pk=to_account)
+        to_account = Account.objects.select_for_update().get(
+            pk=to_account
+        )
 
         if from_account.balance < amount:
             raise ValidationError(
@@ -41,3 +43,6 @@ class PaymentManager(models.Manager):
         )
         from_account.balance -= amount
         from_account.save(update_fields=['balance'])
+
+        to_account.balance += amount
+        to_account.save(update_fields=['balance'])

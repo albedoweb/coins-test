@@ -42,7 +42,7 @@ class PaymentTestCase(TestCase):
 
     def test_create_payment(self):
         account = AccountFactory(balance=150)
-        account2 = AccountFactory()
+        account2 = AccountFactory(balance=0)
 
         url = reverse('payment')
         response = self.client.post(
@@ -75,6 +75,9 @@ class PaymentTestCase(TestCase):
 
         account.refresh_from_db()
         self.assertEqual(account.balance, 50)
+
+        account2.refresh_from_db()
+        self.assertEqual(account2.balance, 100)
 
     def test_bad_balance(self):
         account = AccountFactory(balance=50)
