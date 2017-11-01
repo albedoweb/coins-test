@@ -9,6 +9,7 @@ App provides simple RESTful API for payments. App created for demo purpose.
 * `virtualenv ./env/`
 * `source ./venv/bin/activate`
 * `pip install -r ./requirements/development.txt`
+* `python coins/manage.py migrate`
 
 ## Tests and PEP8
 
