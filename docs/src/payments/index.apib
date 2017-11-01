@@ -1,0 +1,51 @@
+# Group Payments API
+
+## Payment API [/v1/payments/]
+
+### Get payment list [GET /v1/payments/]
+
++ Response 200 (application/json)
+
+    + Attributes
+        + id (string, required)
+        + from_account (string, required) - account id
+        + to_account (string, required) - account id
+        + amount (number, required) - amount of payment
+        + direction (string, required) - direction of payment
+
+    + Body
+
+            [
+                {
+                    "id": "123",
+                    "from_account": "ivan23",
+                    "to_account": "pawel555",
+                    "amount": 100.00,
+                    "direction": "1",
+                },
+                ...
+            ]
+
+### Create payment [POST /v1/payments/]
+
++ Request (application/json)
+
+    + Attributes
+        + from_account (string, required) - account id
+        + to_account (string, required) - account id
+        + amount (number, required) - amount of payment
+
++ Response 200 (application/json)
+
+    + Attributes
+        + from_account (string, required) - account id
+        + to_account (string, required) - account id
+        + amount (number, required) - amount of payment
+
+    + Body
+
+            {
+                "from_account": "ivan23",
+                "to_account": "pawel555",
+                "amount": 100.00,
+            }

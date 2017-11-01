@@ -1,0 +1,23 @@
+# Group Accounts API
+
+## Accounts API [GET /v1/accounts/]
+
++ Response 200 (application/json)
+
+    + Attributes
+        + id (string, required)
+        + owner (string, required) - account's owner name
+        + balance (number, required) - current balance of account
+        + currency (string, required) - currency code
+
+    + Body
+
+            [
+                {
+                    "id": "ivan123",
+                    "owner": "ivan",
+                    "balance": 100.00,
+                    "currency": "PHP",
+                },
+                ...
+            ]

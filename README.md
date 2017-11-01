@@ -2,7 +2,7 @@
 
 ## Overview
 
-App provides simple restful API for payments. App created for demo purpose.
+App provides simple RESTful API for payments. App created for demo purpose.
 
 ## Installation
 
@@ -12,9 +12,19 @@ App provides simple restful API for payments. App created for demo purpose.
 
 ## Tests and PEP8
 
+From project root:
+
 * `flake8 ./coins` to run PEP8 check
-* `python ./coins/manage.py test` to run tests
+* `cd ./coins; python ./manage.py test` to run tests
 
 ## Documentation
 
+API documentation can be found in `./docs/api.generated.html`.
 
+To rebuild docs:
+
+```
+npm install -g aglio
+
+aglio -i docs/src/index.apib -o docs/api.generated.html --theme-variables flatly --theme-full-width
+```
